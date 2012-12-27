@@ -1,2 +1,4 @@
 
 *.o
+libchess.a
+shell/chess-shell

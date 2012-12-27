@@ -1,6 +1,6 @@
 CC=gcc
 CFLAGS=-g -Wall -ansi -pedantic
-LDFLAGS=-L.. -lchesslib
+LDFLAGS=-L.. -lchess
 SRCS=$(wildcard *.c)
 OBJS=$(SRCS:.c=.o)
 EXE=chess-shell

@@ -1,14 +1,14 @@
 CC=gcc
-CFLAGS=-g -Wall -ansi -pedantic
+CFLAGS=-g -Wall -ansi -pedantic -fpic
 SRCS=$(wildcard *.c)
 OBJS=$(SRCS:.c=.o)
-SUBDIRS=test shell
-LIB=libchesslib.a
+SUBDIRS=shell
+LIB=libchess.a
 
 all: $(LIB) $(SUBDIRS)
 
 $(LIB): $(OBJS)
-	libtool -static -o $@ $(OBJS)
+	libtool -static -o $@ $(OBJS) 2>/dev/null || ar crus $@ $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -19,4 +19,8 @@ clean: $(SUBDIRS)
 $(SUBDIRS):
 	$(MAKE) -C $@ $(MAKEOPTS) $(MAKECMDGOALS)
 
-.PHONY: clean $(SUBDIRS)
+test:
+	$(MAKE) -C $@ $(MAKEOPTS)
+	
+
+.PHONY: clean $(SUBDIRS) test
