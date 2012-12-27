@@ -6,6 +6,7 @@
 #include "calloc.h"
 #include "cstring.h"
 #include "carray.h"
+#include "strings.h"
 
 struct ExtraTag
 {

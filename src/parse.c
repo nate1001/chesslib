@@ -9,6 +9,7 @@
 #include "parse.h"
 #include "generate.h"
 #include "carray.h"
+#include "strings.h"
 
 static ChessBoolean matches_move(const ChessPosition* position, ChessMove move,
     char piece, char from_file, char from_rank, char capture, char to_file, char to_rank, char promote)
