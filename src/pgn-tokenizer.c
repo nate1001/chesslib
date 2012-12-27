@@ -141,7 +141,7 @@ static void read_symbol_token(ChessPgnTokenizer* tokenizer)
 static void read_number_token(ChessPgnTokenizer* tokenizer)
 {
     int c;
-    while ((c = tokenizer_getc(tokenizer)) != EOF && isnumber(c))
+    while ((c = tokenizer_getc(tokenizer)) != EOF && isdigit(c))
         chess_buffer_append_char(&tokenizer->buffer, c);
     tokenizer_ungetc(tokenizer);
 }
