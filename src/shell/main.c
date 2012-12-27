@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <strings.h>
 
 #include "../game.h"
 #include "../generate.h"
@@ -109,6 +110,7 @@ static void save_pgn(const ChessGame* game)
     putchar('\n');
 }
 
+/*
 static void load_pgn(ChessGame* game, const char* filename)
 {
     FILE* file;
@@ -135,6 +137,7 @@ static void load_pgn(ChessGame* game, const char* filename)
     chess_pgn_loader_cleanup(&loader);
     chess_file_reader_cleanup(&reader);
 }
+*/
 
 static void undo_move(ChessGameIterator* iter)
 {
